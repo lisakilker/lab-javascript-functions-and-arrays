@@ -5,11 +5,28 @@ console.log(Math.max(2,8));
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+var empty = [];
 
-function findLongestWord() {}
+function findLongestWord() {
 
-
-
+    var wordlength = 0;
+    for(var i =0; i < words.length; i++){
+      if( wordlength < words[i].length){
+        wordlength= words[i].length;
+      }
+    }
+    for(var j =0; j < words.length; j++){
+      if(words[j].length ==  wordlength){
+        empty.push(words[j]);
+      }
+    }
+   if(empty.length == 1){
+     return empty[0]
+   }else{
+      return empty
+  }
+}
+console.log(findLongestWord(empty));
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
@@ -42,7 +59,6 @@ function averageNumbers(array) {
 
   return total / count;
 }
-
 console.log(averageNumbers(numbersAvg));
 
 
