@@ -206,16 +206,23 @@ const matrix = [
 
 function greatestProduct(matrix) {
   let max = 0;
+  let total = 0;
 
-  for (let i = 0; i < 4; i++) {
-    if (i < matrix.length - 4) {
-  total = matrix[i][i] * matrix[i][i+1] * matrix[i][i+2] * matrix[i][i+3]
-  }
-  max = Math.max(total,max)
+  for (let i = 0; i <= 4; i++) {
+    for (let j = 0; j <= 4; j++) {
+      if (i <= matrix.length - 4) {
+        total = matrix[i][i] * matrix[i][i+1] * matrix[i][i+2] * matrix[i][i+3]
+        }
+        max = Math.max(total, max)
+    
+        if (j <= matrix[i] - 4) {
+        total = matrix[j][j] * matrix[j][j+1] * matrix[j][j+2] * matrix[j][j+3]
+        }
+        max = Math.max(total, max)
 }
 return max;
 }
-greatestProduct(matrix)
+greatestProduct(matrix);
 
 
 
