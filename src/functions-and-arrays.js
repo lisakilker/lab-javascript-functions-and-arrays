@@ -204,7 +204,18 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct(matrix) {
+  let max = 0;
+
+  for (let i = 0; i < 4; i++) {
+    if (i < matrix.length - 4) {
+  total = matrix[i][i] * matrix[i][i+1] * matrix[i][i+2] * matrix[i][i+3]
+  }
+  max = Math.max(total,max)
+}
+return max;
+}
+greatestProduct(matrix)
 
 
 
