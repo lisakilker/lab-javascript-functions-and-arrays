@@ -54,13 +54,13 @@ const mixedArr = [6, 12, "Miami", 1, true, "Orlando", 10];
 function sum(mixedArr) {
 let sum = 0;
 
-for (let i = 0; i < numArr.length; i++); {
-  if(typeof numArr[i] === "object" || typeof numArr[i] === "array");
+for (let i = 0; i < mixedArr.length; i++); {
+  if(typeof mixedArr[i] === "object" || typeof mixedArr[i] === "array"){
   //sum += numArr[i];
-} else if (typeof numArr[i === "string"){
-  sum += numArr[i].length;
+} else if (typeof mixedArr[i] === "string") {
+  sum += mixedArr[i].length;
 }
-sum += numArr[i];
+sum += mixedArr[i];
 }
 return sum;
 
@@ -70,18 +70,26 @@ return sum;
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers(array) {
-  var total = 0;
-  var count = 0;
+function averageNumbers(numbers){
+  if (numbers.length === 0)
+  return null
 
-  array.forEach(function(item, index) {
-      total += item;
-      count++;
-  });
-
-  return total / count;
+  return sumNumbers(numbers)/numbers.length
 }
-console.log(averageNumbers(numbersAvg));
+
+//function averageNumbers(array) {
+  
+//   var total = 0;
+//   var count = 0;
+
+//   array.forEach(function(item, index) {
+//       total += item;
+//       count++;
+//   });
+
+//   return total / count;
+// }
+// console.log(averageNumbers(numbersAvg));
 
 
 // Level 2: Array of strings
