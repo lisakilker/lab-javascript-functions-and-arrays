@@ -204,26 +204,27 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct(matrix) {
-  let max = 0;
-  let total = 0;
+function greatestProduct(arr) {
+  let max = 0,
+    n = 4,
+    result;
+for (let i = 0; i <= n; i++) {
+    // iterate the columns.
+    for (let j = 0; j <= n; j++) {
+if (j <= arr[i].length - n) {
+        result = arr[i][j] * arr[i][j + 1] * arr[i][j + 2] * arr[i][j + 3];
+        if (max < result) max = result;
+      }
+if (i <= arr.length - n) {
+        result = arr[i][j] * arr[i + 1][j] * arr[i + 2][j] * arr[i + 3][j];
 
-  for (let i = 0; i <= 4; i++) {
-    for (let j = 0; j <= 4; j++) {
-      if (i <= matrix.length - 4) {
-        total = matrix[i][i] * matrix[i][i+1] * matrix[i][i+2] * matrix[i][i+3]
-        }
-        max = Math.max(total, max)
-    
-        if (j <= matrix[i] - 4) {
-        total = matrix[j][j] * matrix[j][j+1] * matrix[j][j+2] * matrix[j][j+3]
-        }
-        max = Math.max(total, max)
-}
-return max;
-}
-greatestProduct(matrix);
+        if (max < result) max = result;
+      }
 
+    }
+  }
+  return max;
+}
 
 
 
